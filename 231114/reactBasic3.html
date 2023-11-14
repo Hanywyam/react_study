@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>reactBasic3</title>
+  <style></style>
+</head>
+
+<body>
+  <!-- HTML DOM 컨테이너 -->
+  <div id="root">
+    <!-- 작성한 내용이 표시되는 영역 -->
+  </div>
+
+  <!-- 리액트 사용을 위한 cdn 연결 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- JSX 사용을 위한 cdn 연결 -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+
+    const time = () => {
+      const elem = (
+        <>
+          <h1>현재 시간</h1>
+          <h2>지금 시간은 {new Date().toLocaleTimeString()} 입니다.</h2>
+        </>
+      );
+      root.render(elem);
+    }
+
+    setInterval(time, 1000);
+
+  </script>
+</body>
+
+</html>

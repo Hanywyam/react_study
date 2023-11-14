@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>reactBasic2</title>
+  <style></style>
+</head>
+
+<body>
+  <!-- HTML DOM 컨테이너 -->
+  <div id="yam">
+    <!-- 작성한 내용이 표시되는 영역 -->
+  </div>
+
+  <!-- 리액트 사용을 위한 cdn 연결 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- JSX 사용을 위한 cdn 연결 -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    // JSX 방식으로 작성.
+    const data = {
+      name: '아메리카노',
+      size: 'tall',
+      price: 4000
+    }
+
+    const coffee = (itm) => {
+      return `주문한 ${data.name}는 ${data.size}사이즈로 ${data.price}원입니다.`;
+    }
+
+    const output1 = <h1>주문한 커피는 라떼입니다.</h1>
+    const output2 = <h1>주문한 {data.name}는 {data.size}사이즈로 {data.price}원입니다.</h1>;
+    const output3 = (<h1>{coffee(data)}</h1>);
+
+    const root = ReactDOM.createRoot(document.getElementById('yam'));
+    root.render(output3);
+  </script>
+</body>
+
+</html>
