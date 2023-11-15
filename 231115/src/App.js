@@ -20,6 +20,8 @@
 
 import "./App.css";
 import Event1 from "./components/Event1";
+import Target from "./components/Target";
+import Map from "./components/Map";
 /* 
 import Basic1 from "./components/Basic1";
 import Basic2 from "./components/Basic2";
@@ -50,6 +52,8 @@ function App() {
       <Ex5 />
        */}
       <Event1 />
+      <Target />
+      <Map />
     </>
   );
 }
