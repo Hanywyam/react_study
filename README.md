@@ -118,6 +118,17 @@ export default Event1;
         <button onClick={() => num(100)}>숫자 출력</button>
 ```
 
+#### target
+
+#### map()
+
+- .map((elem, index) => {});
+  - 새로운 배열로 반환
+  - .map() 사용 시 고유한 key값을 부여해야 함
+  - index의 경우 단순 출력이 필요한 경우만 사용 권장
+  - 삭제, 수정, 추가 등에서는 index가 아닌 key 혹은 고유 id 사용 권장
+  - 대부분 안정적인 고유성을 부여하기 위해 배열 내부 요소에 id를 작성하여 key로 사용
+
 ## 231114
 
 #### react 기초
