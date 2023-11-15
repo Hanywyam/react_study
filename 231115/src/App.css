@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.borderTop {
+  border-top: 1px solid#000;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #000;
+}
+
+/* 
+ 하위에 있는 컴포넌트에도 상위 css의 스타일을 쓸수 있음.
+ 단점은 관리가 어렵다.
+*/
