@@ -1,5 +1,48 @@
 # react_study
 
+## 231116
+
+#### default 폴더 만들기
+
+- 다른 환경, 또는 새로운 작업을 진행할 때 사용할 수 있는 기본 작업파일 생성.
+  - 필수 파일
+    - package.json
+    - [src] 폴더
+  - 선택 파일
+    - [public] 폴더
+    - .gitignore : 깃허브 업로드 시 필요. 하지말아야 할 것들에 대한 설정
+
+#### 훅 hook
+
+- 리액트가 사용자가 사용하기 편하게 만들어 놓은 함수.
+- state와 생명주기 기능을 원하는 시점에 정해진 함수가 실행되도록 만든 함수
+- 훅은 모두 use로 시작 함
+- 개발자의 커스텀 훅도 가능
+
+#### 상태 state
+
+- state == 상태. 상태 변화를 위해 사용하는 hook.
+
+  - 랜더링이 될 때 마다 화면에 새롭게 그려내는 방식이므로 상태 유지를 하지 못함
+  - 새롭게 재랜더링되어 함수, 변수 등 다시 초기화 됨
+  - 그래서 값을 유지하기 위해 hook을 사용
+  - 상태 값이 변경되는 경우 useState()
+    - **useState()** :state를 사용하기 위한 훅
+      - const [state, setState] = useState(초기값);
+      - const [상태데이터(변수), 상태값을 변경하기 위한 함수] = useState(초기값);
+      - 초기값: 숫자, 문자, 논리, 배열 객체 등등
+
+```react
+// const [state이름, state변경함수] = useState(초기값)
+const [state, setState] = useState();
+```
+
+#### form
+
+- input
+  - onChange / checked
+  - value
+
 ## 231115
 
 - 리액트 작업 시, 모든 작업은 src 안에 작업.
@@ -128,6 +171,27 @@ export default Event1;
   - index의 경우 단순 출력이 필요한 경우만 사용 권장
   - 삭제, 수정, 추가 등에서는 index가 아닌 key 혹은 고유 id 사용 권장
   - 대부분 안정적인 고유성을 부여하기 위해 배열 내부 요소에 id를 작성하여 key로 사용
+
+<details>
+<summary> 파일 정리 [접기/펼치기]</summary>
+
+- ./components/Basic1
+- ./components/Basic2
+- ./components/Basic3
+- ./components/Basic4
+- ./components/Basic5
+- ./components/Basic6
+- ./components/Event1
+- ./components/Map
+- ./components/Target
+- ./ex/Ex1
+- ./ex/Ex2
+- ./ex/Ex2Sub
+- ./ex/Ex3
+- ./ex/Ex4
+- ./ex/Ex4Sub
+- ./ex/Ex5
+</details>
 
 ## 231114
 
