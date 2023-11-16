@@ -1,0 +1,24 @@
+.borderTop {
+  border-top: 1px solid #000;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.margin-10 {
+  margin: 20px;
+}
+
+.padding-10 {
+  padding: 10px 50px;
+  border: 1px solid #000;
+  background-color: bisque;
+  text-align: center;
+}
+
+.listStyle {
+  list-style: none;
+  padding: 5px;
+  margin: 10px 0;
+  text-align: left;
+  background-color: antiquewhite;
+}
