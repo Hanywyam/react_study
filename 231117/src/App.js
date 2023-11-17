@@ -7,6 +7,7 @@ import Style3Com2 from "./components/Style3Com2";
 import Style4Com3 from "./components/Style4Com3";
 import Style5Modules from "./components/Style5Modules";
 import Ex1Style from "./ex/Ex1Style";
+import Business from "./business/Business";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <Style3Com2 /> */}
       {/* <Style4Com3 /> */}
       {/* <Style5Modules /> */}
-      <Ex1Style />
+      {/* <Ex1Style /> */}
+      <Business />
     </>
   );
 }
