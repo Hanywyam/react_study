@@ -1,16 +1,67 @@
 # react_study
 
+## 231117
+
+#### 외부 데이터 불러오기 external data
+
+#### CSS style
+
+- **scss style**
+  - 예전부터 전통적으로 사용해온 스타일 방식.
+  - 패키지를 설치해야 사용 가능.
+  - 터미널에서 "npm i sass"로 node 환경에 패키지 다운로드.
+  - 외부 링크로 연결하여 적용.
+  - [sass](https://www.npmjs.com/package/sass)
+
+```react scss
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px auto;
+  .box {
+    // === .container .box : scss의 하위 표현
+    text-align: center;
+    padding: 4px 10px;
+  }
+}
+```
+
+- **styled-components**
+  - 터미널에서 "npm i styled-components"로 node 환경에 패키지 다운로드.
+  - 컴포넌트별로 같은 파일에 스타일 컴포넌트를 만들어서 직접 적용.
+  - [styled-components](https://styled-components.com/)
+
+```react styled-components
+방법 1)
+  const 컴포넌트명 = styled.태그명`
+    css 스타일
+  `
+방법 2)
+  const 컴포넌트명 = styled('태그')`
+    css 스타일
+  `
+```
+
+- **css module**
+  - 파일명.module.css
+  - 컴포넌트별 유지 보수를 용이하게 하기 위해 사용
+
+```
+<요소 className={참조변수.클래스명} />
+<h1 className={myStyle.title} />
+
+```
+
+- 리액트 스타일은 컴포넌트별로 분리해서 사용하는 것을 추천
+- 중복 이름 문제로 css보다는 css modules 사용
+
 ## 231116
 
 #### default 폴더 만들기
 
-- 다른 환경, 또는 새로운 작업을 진행할 때 사용할 수 있는 기본 작업파일 생성.
-  - 필수 파일
-    - package.json
-    - [src] 폴더
-  - 선택 파일
-    - [public] 폴더
-    - .gitignore : 깃허브 업로드 시 필요. 하지말아야 할 것들에 대한 설정
+- 새로운 작업 환경을 간편하게 만들기 위해 정리해둔 기본값 파일.
+- 다음 작업 시, 해당 폴더 내용만 붙여넣은 후 "npm i"로 사용 가능.
 
 #### 훅 hook
 
@@ -37,7 +88,7 @@
 const [state, setState] = useState();
 ```
 
-#### form
+#### 폼 form
 
 - input
   - onChange / checked
@@ -87,6 +138,14 @@ const [state, setState] = useState();
 #### build
 
 #### 다른 장소에서 이동하여 작업할 파일 생성
+
+- 다른 환경, 또는 새로운 작업을 진행할 때 사용할 수 있는 기본 작업파일 생성.
+  - 필수 파일
+    - package.json
+    - [src] 폴더
+  - 선택 파일
+    - [public] 폴더
+    - .gitignore : 깃허브 업로드 시 필요. 하지말아야 할 것들에 대한 설정
 
 #### event
 

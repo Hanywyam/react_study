@@ -1,0 +1,71 @@
+// 컴파일되지 않는 주석
+/* 컴파일 되는 주석 */
+
+//StyleScss.scss
+
+// 변수 선언
+$orange: orange;
+$salmon: salmon;
+$tomato: tomato;
+$maroon: maroon;
+$teal: teal;
+$main-font: "pretendard", "맑은 고딕", san-serif;
+$subFont: "바탕", 돋움, serif;
+
+// 선언 @maixin, 사용 @include
+// 선언
+@mixin boxStyle($item) {
+  $width: 100px;
+  /* 오ㅐ 안돼...
+  // 조건식을 통해 변수 설정
+  @if $item % 2 == 0 {
+    $width: $width + 30;
+  } @else if $item % 3 == 0 {
+    $width: $width -30;
+  } @else {
+    $width: $witdh;
+  } */
+
+  width: $width;
+  height: 50px * 2; // 연산
+  transition: 0.4s;
+  &:hover {
+    transform: scale(1.1) rotate(45deg);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px auto;
+  h2 {
+    font-family: $main-font;
+  }
+  .box {
+    // === .container .box : scss의 하위 표현
+    border: 1px solid #000;
+    text-align: center;
+    padding: 4px 10px;
+
+    &.orange {
+      background-color: $orange;
+      @include boxStyle(item);
+    }
+    &.salmon {
+      background-color: $salmon;
+    }
+    &.tomato {
+      background-color: $tomato;
+    }
+    &.maroon {
+      background-color: $maroon;
+    }
+    &.teal {
+      background-color: $teal;
+    }
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
