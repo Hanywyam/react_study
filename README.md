@@ -1,5 +1,19 @@
 # react_study
 
+## 231120
+
+- 컴포넌트를 활용하여 survey 만들기.
+- 데이터 삭제(CRUD)
+  - CRUD란?
+    : 데이터를 다루는 기본 기능
+    - Create 생성
+    - Read 조회
+    - Update 갱신
+    - Delete 삭제
+
+- useEffect
+- API
+
 ## 231118hw
 
 - 미니 프로젝트 : 환율 계산기 만들기
