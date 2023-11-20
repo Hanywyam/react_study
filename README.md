@@ -10,7 +10,25 @@
     - Read 조회
     - Update 갱신
     - Delete 삭제
+- useRef
+  - 컴포넌트 렌더링과 상관없이 값을 보관.
+  - 재랜더링을 피할 목적으로 사용.
+    - DOM에 직접 접근하는 경우
+    - ref는 컴포넌트 안에서만 동작
+    - input의 focus나 scroll 이벤트, 애니메이션 사용 시.
 
+```react
+/*
+선언
+const a = useRef();
+
+사용
+a.current.id = "userID";
+*/
+```
+
+- [Ref와DOM](https://ko.legacy.reactjs.org/docs/refs-and-the-dom.html#gatsby-focus-wrapper)
+- [Hooks API Reference](https://ko.legacy.reactjs.org/docs/hooks-reference.html#useref)
 - useEffect
 - API
 

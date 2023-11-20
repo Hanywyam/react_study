@@ -24,8 +24,8 @@ const dataList = [
 
 const Ex2 = () => {
   const [data, setData] = useState(dataList);
-  const [isAllChk, setIsAllChk] = useState(true);
 
+  // 전체 동의 체크박스 클릭 시, 전체 체크. 해제 시, 전체 체크 해제.
   const changeInput = (e) => {
     const { name, checked } = e.target;
     if (name === "all") {
@@ -45,16 +45,14 @@ const Ex2 = () => {
 
   return (
     <div className="borderTop">
-      {/* 전체 동의 체크박스 
-      클릭 시, 전체 체크. 
-      해제 시, 전체 체크 해제. */}
       <h2>Ex2 - 약관동의</h2>
       <p>
         <input
           type="checkbox"
+          name="all"
           id="all"
           onChange={changeInput}
-          checked={isAllChk}
+          checked={data.filter((item) => item.isChk !== true).length < 1}
         />
         <label htmlFor="all">전체 동의</label>
         <hr />
