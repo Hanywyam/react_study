@@ -1,21 +1,14 @@
 # react_study
 
-## 231120
+## 231121
 
-- 컴포넌트를 활용하여 survey 만들기.
-- 데이터 삭제(CRUD)
-  - CRUD란?
-    : 데이터를 다루는 기본 기능
-    - Create 생성
-    - Read 조회
-    - Update 갱신
-    - Delete 삭제
 - useRef
   - 컴포넌트 렌더링과 상관없이 값을 보관.
   - 재랜더링을 피할 목적으로 사용.
     - DOM에 직접 접근하는 경우
     - ref는 컴포넌트 안에서만 동작
     - input의 focus나 scroll 이벤트, 애니메이션 사용 시.
+  - 고유한 값이 필요할 때 사용.
 
 ```react
 /*
@@ -29,8 +22,43 @@ a.current.id = "userID";
 
 - [Ref와DOM](https://ko.legacy.reactjs.org/docs/refs-and-the-dom.html#gatsby-focus-wrapper)
 - [Hooks API Reference](https://ko.legacy.reactjs.org/docs/hooks-reference.html#useref)
+
+- GitHud 업로드
+  - 1. react 작업이 끝나면
+  - 2. package.json 파일 수정 (homepage, deploy 추가)
+  - 3. npm i gh-pages
+  - 4. git init부터 add, commit, reomte, push 등 진행
+  - 5. github settings에서 pages 설정
+  - 6. react로 돌아가 npm run build, deploy
+  - 7. github settings에서 pages gh-page로 변경
+
+```
+1)gh-pages 패키지 설치
+npm i gh-pages
+
+2)설치 후 package.json 파일 수정
+"homepage": "https://xxxx.github.io/portfolio",  // 깃헙 페이지 주소 추가
+"deploy": "gh-pages -d build" // deploy 명령어 추가
+
+3)deploy
+npm run build // build 폴더로 빌드
+npm run deploy // 현재 로컬 build폴더를 gh-pages 브랜치로 업로드
+```
+
 - useEffect
 - API
+
+## 231120
+
+- 컴포넌트를 활용하여 survey 만들기.
+- 데이터 삭제(CRUD)
+  - CRUD란?
+    : 데이터를 다루는 기본 기능
+    - Create 생성
+    - Read 조회
+    - Update 갱신
+    - Delete 삭제
+      - filter()를 이용하여 작성.
 
 ## 231118hw
 
