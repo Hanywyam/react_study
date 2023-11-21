@@ -24,13 +24,13 @@ a.current.id = "userID";
 - [Hooks API Reference](https://ko.legacy.reactjs.org/docs/hooks-reference.html#useref)
 
 - GitHud 업로드
-  - 1. react 작업이 끝나면
-  - 2. package.json 파일 수정 (homepage, deploy 추가)
-  - 3. npm i gh-pages
-  - 4. git init부터 add, commit, reomte, push 등 진행
-  - 5. github settings에서 pages 설정
-  - 6. react로 돌아가 npm run build, deploy
-  - 7. github settings에서 pages gh-page로 변경
+  - 1) react 작업이 끝나면
+  - 2) package.json 파일 수정 (homepage, deploy 추가)
+  - 3) npm i gh-pages
+  - 4) git init부터 add, commit, reomte, push 등 진행
+  - 5) github settings에서 pages 설정
+  - 6) react로 돌아가 npm run build, deploy
+  - 7) github settings에서 pages gh-page로 변경
 
 ```
 1)gh-pages 패키지 설치
