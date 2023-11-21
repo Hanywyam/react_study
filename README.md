@@ -2,13 +2,14 @@
 
 ## 231121
 
-- useRef
-  - 컴포넌트 렌더링과 상관없이 값을 보관.
-  - 재랜더링을 피할 목적으로 사용.
-    - DOM에 직접 접근하는 경우
-    - ref는 컴포넌트 안에서만 동작
-    - input의 focus나 scroll 이벤트, 애니메이션 사용 시.
-  - 고유한 값이 필요할 때 사용.
+#### useRef
+
+- 컴포넌트 렌더링과 상관없이 값을 보관.
+- 재랜더링을 피할 목적으로 사용.
+  - DOM에 직접 접근하는 경우
+  - ref는 컴포넌트 안에서만 동작
+  - input의 focus나 scroll 이벤트, 애니메이션 사용 시.
+- 고유한 값이 필요할 때 사용.
 
 ```react
 /*
@@ -23,14 +24,46 @@ a.current.id = "userID";
 - [Ref와DOM](https://ko.legacy.reactjs.org/docs/refs-and-the-dom.html#gatsby-focus-wrapper)
 - [Hooks API Reference](https://ko.legacy.reactjs.org/docs/hooks-reference.html#useref)
 
-- GitHud 업로드
-  - (1) react 작업이 끝나면
-  - (2) package.json 파일 수정 (homepage, deploy 추가)
-  - (3) npm i gh-pages
-  - (4) git init부터 add, commit, reomte, push 등 진행
-  - (5) github settings에서 pages 설정
-  - (6) react로 돌아가 npm run build, deploy
-  - (7) github settings에서 pages gh-page로 변경
+#### useEffect
+
+- 컴포넌트 생명주기마다 특정 기능을 실행 할 수 있게 해주는 hook
+- (sideEffect처럼 주요기능 이외의 함수)
+  - 생명주기
+  - Mount: 생성. 시작시 컴포넌트 생성
+  - Update: 갱신. state 값 변경 시 컴포넌트변경(state값 변경)
+  - unMount: 소멸. 종료 시 컴포넌트소멸
+- 외부 API를 불러올 때 주로 사용.
+
+```
+useEffect(함수, []);
+  <!--
+  주로 side effect 를 수행.
+  비동기 통신 요청 및 응답, DOM 조작, props를 받아서 갱신할 때, 외부 라이브러리 등을 사용할 때 적용.
+  -->
+```
+
+- useEffect(()=>{실행문}); 렌더링 될 때마다 실행. 일반적으로는 사용 X
+- useEffect(()=>{실행문}); mount가 한 번만 실행.
+- useEffect(()=>{실행문}); 특정 상태이거나 props가 변결 될 때 마다 실행.
+
+```
+  useEffect(()=> {
+    실행문
+    return ()=> {clean-up 함수}
+  },[state]);
+```
+
+- return: Mount가 한 번만 실행 후 정리. 메모리 누수가 발생하지 않도록 정리가 필요하기 때문.
+
+#### GitHud 업로드
+
+1. react 작업이 끝나면
+2. package.json 파일 수정 (homepage, deploy 추가)
+3. npm i gh-pages
+4. git init부터 add, commit, reomte, push 등 진행
+5. github settings에서 pages 설정
+6. react로 돌아가 npm run build, deploy
+7. github settings에서 pages gh-page로 변경
 
 ```
 1)gh-pages 패키지 설치
@@ -45,20 +78,21 @@ npm run build // build 폴더로 빌드
 npm run deploy // 현재 로컬 build폴더를 gh-pages 브랜치로 업로드
 ```
 
-- useEffect
 - API
 
 ## 231120
 
-- 컴포넌트를 활용하여 survey 만들기.
-- 데이터 삭제(CRUD)
-  - CRUD란?
-    : 데이터를 다루는 기본 기능
-    - Create 생성
-    - Read 조회
-    - Update 갱신
-    - Delete 삭제
-      - filter()를 이용하여 작성.
+#### 컴포넌트를 활용하여 survey 만들기.
+
+#### 데이터 삭제(CRUD)
+
+- **CRUD란?**
+  : 데이터를 다루는 기본 기능
+  - Create 생성
+  - Read 조회
+  - Update 갱신
+  - Delete 삭제
+    - filter()를 이용하여 작성.
 
 ## 231118hw
 
