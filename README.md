@@ -1,5 +1,59 @@
 # react_study
 
+## 231122
+
+#### ex: Friend List 만들기
+
+```
+Friends
+├─ FriendLists
+│  ├─ FriendItem
+│  └─ FriendLiBtn
+└─ FriendInfo
+```
+
+#### useEffect
+
+- 컴포넌트 생명주기마다 특정 기능을 실행 할 수 있게 해주는 hook
+- (sideEffect처럼 주요기능 이외의 함수)
+  - 생명주기
+  - Mount: 생성. 시작시 컴포넌트 생성
+  - Update: 갱신. state 값 변경 시 컴포넌트변경(state값 변경)
+  - unMount: 소멸. 종료 시 컴포넌트소멸
+- 외부 API를 불러올 때 주로 사용.
+
+```
+useEffect(함수, []);
+  <!--
+  주로 side effect 를 수행.
+  비동기 통신 요청 및 응답, DOM 조작, props를 받아서 갱신할 때, 외부 라이브러리 등을 사용할 때 적용.
+  -->
+```
+
+- useEffect(()=>{실행문}); 렌더링 될 때마다 실행. 일반적으로는 사용 X
+- useEffect(()=>{실행문},[]); mount가 한 번만 실행.
+- useEffect(()=>{실행문},[state(props)]); 특정 상태이거나 props가 변결 될 때 마다 실행.
+
+#### useEffect : clean-up
+
+- clean-up 함수: 살아있는 이벤트를 제거.
+- return: Mount가 한 번만 실행 후 정리. 메모리 누수가 발생하지 않도록 정리가 필요하기 때문.
+
+```
+  useEffect(()=> {
+    실행문
+    return ()=> {clean-up 함수
+  };
+  },[state]);
+```
+
+#### useCallback
+
+- useCallback(()=>{},[]);
+  - 함수를 memoization 함. 즉, 이전에 계산된 값을 저장했다가 동일한 상황이 다시 발생하면 다시 계산하지 않고 저장된 값을 반환.
+  - 있던 값을 다시 반환하여 사용.
+  - 주로 하위 컴포넌트에 콜백 함수를 전달 할 때 사용.
+
 ## 231121
 
 #### useRef
@@ -24,37 +78,6 @@ a.current.id = "userID";
 - [Ref와DOM](https://ko.legacy.reactjs.org/docs/refs-and-the-dom.html#gatsby-focus-wrapper)
 - [Hooks API Reference](https://ko.legacy.reactjs.org/docs/hooks-reference.html#useref)
 
-#### useEffect
-
-- 컴포넌트 생명주기마다 특정 기능을 실행 할 수 있게 해주는 hook
-- (sideEffect처럼 주요기능 이외의 함수)
-  - 생명주기
-  - Mount: 생성. 시작시 컴포넌트 생성
-  - Update: 갱신. state 값 변경 시 컴포넌트변경(state값 변경)
-  - unMount: 소멸. 종료 시 컴포넌트소멸
-- 외부 API를 불러올 때 주로 사용.
-
-```
-useEffect(함수, []);
-  <!--
-  주로 side effect 를 수행.
-  비동기 통신 요청 및 응답, DOM 조작, props를 받아서 갱신할 때, 외부 라이브러리 등을 사용할 때 적용.
-  -->
-```
-
-- useEffect(()=>{실행문}); 렌더링 될 때마다 실행. 일반적으로는 사용 X
-- useEffect(()=>{실행문}); mount가 한 번만 실행.
-- useEffect(()=>{실행문}); 특정 상태이거나 props가 변결 될 때 마다 실행.
-
-```
-  useEffect(()=> {
-    실행문
-    return ()=> {clean-up 함수}
-  },[state]);
-```
-
-- return: Mount가 한 번만 실행 후 정리. 메모리 누수가 발생하지 않도록 정리가 필요하기 때문.
-
 #### GitHud 업로드
 
 1. react 작업이 끝나면
@@ -78,11 +101,9 @@ npm run build // build 폴더로 빌드
 npm run deploy // 현재 로컬 build폴더를 gh-pages 브랜치로 업로드
 ```
 
-- API
-
 ## 231120
 
-#### 컴포넌트를 활용하여 survey 만들기.
+#### ex: 컴포넌트를 활용하여 survey 만들기.
 
 #### 데이터 삭제(CRUD)
 
@@ -172,7 +193,7 @@ npm run deploy // 현재 로컬 build폴더를 gh-pages 브랜치로 업로드
 - 훅은 모두 use로 시작 함
 - 개발자의 커스텀 훅도 가능
 
-#### 상태 state
+#### 상태 state : useState()
 
 - state == 상태. 상태 변화를 위해 사용하는 hook.
 
