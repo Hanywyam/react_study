@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FriendLists from "./FriendLists";
 import FriendsInfo from "./FriendsInfo";
 import catData from "../assets/DB/catData";
@@ -53,6 +53,13 @@ const Friends = () => {
     setData(data.filter((list) => list.id !== id));
   };
 
+  const newId = useRef(1);
+
+  const onAdd = (newFriend) => {
+    setData([...data, { id: newId.current++, ...newFriend }]);
+    setCount(count + 1);
+  };
+
   const handleToggle = () => {
     setIsToggle(!isToggle);
   };
@@ -65,16 +72,16 @@ const Friends = () => {
         {isToggle ? "고양이 추가" : "추가 비활성"}
       </ChkLabel>
 
-      <div>
-        <FriendLists
-          data={data}
-          DelAll={DelAll}
-          Restore={Restore}
-          onDel={onDel}
-        />
-      </div>
+      {/* FriendLists: list + button */}
+      <FriendLists
+        data={data}
+        DelAll={DelAll}
+        Restore={Restore}
+        onDel={onDel}
+      />
 
-      <div>{isToggle && <FriendsInfo data={data} />}</div>
+      {/* FriendsInfo: form */}
+      {isToggle && <FriendsInfo data={data} onAdd={onAdd} />}
     </Container>
   );
 };

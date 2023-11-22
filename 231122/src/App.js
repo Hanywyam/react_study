@@ -10,7 +10,7 @@ import Friends from "./ex/Friends";
 const App = () => {
   return (
     <>
-      <h1>리액트 231122</h1>
+      {/* <h1>리액트 231122</h1> */}
       {/* <UseEffect3 /> */}
       {/* <UseEffect4 /> */}
       {/* <UseEffect5 /> */}
