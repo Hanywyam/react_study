@@ -1,0 +1,12 @@
+/* styles.module.css */
+
+body * {
+  box-sizing: border-box;
+}
+.swiperCom {
+  --swiper-theme-color: orange;
+  --swiper-navigation-size: 25px;
+}
+.swiperCom img {
+  width: 100%;
+}

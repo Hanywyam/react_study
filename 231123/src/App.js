@@ -7,6 +7,8 @@ import Async3 from "./components/Async3";
 import Async4 from "./components/Async4";
 import Ex1Async from "./ex/Ex1Async";
 import Resize1 from "./components/Resize1";
+import Resize2Ref from "./components/Resize2Ref";
+import SwiperCom from "./components/SwiperCom";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       {/* <Async3 /> */}
       {/* <Async4 /> */}
       {/* <Ex1Async /> */}
-      <Resize1 />
+      {/* <Resize1 /> */}
+      {/* <Resize2Ref /> */}
+      <SwiperCom />
     </>
   );
 }

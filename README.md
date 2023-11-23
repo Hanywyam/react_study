@@ -2,6 +2,19 @@
 
 ## 231123
 
+#### swiper
+
+1. 터미널에서 설치
+
+```
+  npm i swiper
+```
+
+2. swiper 사이트에서 react 들어가서 참고해서 적용.
+
+- [swiper react](https://swiperjs.com/react)
+- 스와이퍼 스타일 값도 줄 수 있음.
+
 #### resize: DOM 제어
 
 - 돔을 제어할 때는 객체명을 꼭 작성해야함.
@@ -23,7 +36,7 @@
   },[]);
 ```
 
-#### API: Async await
+#### API: Async await axios
 
 - 외부에 불러온 데이터를 내부로 불러오기
 - 리액트의 외부데이터 호출은 계속해서 랜더링되기때문에, 조건이 충족될 때 불러오도록 작성.
