@@ -1,5 +1,88 @@
 # react_study
 
+## 231123
+
+#### resize: DOM 제어
+
+- 돔을 제어할 때는 객체명을 꼭 작성해야함.
+
+```
+  window.addEventListener("resize", () => {
+    setWidth(window.innerWidth);
+  });
+```
+
+- 이렇게 그냥 쓰면 시스템 과부화가 생김.
+- 그래서 useEffect를 사용해줘야함.
+
+```
+  useEffect(() => {
+  window.addEventListener("resize", () => {
+      setWidth(window.innerWidth);
+    });
+  },[]);
+```
+
+#### API: Async await
+
+- 외부에 불러온 데이터를 내부로 불러오기
+- 리액트의 외부데이터 호출은 계속해서 랜더링되기때문에, 조건이 충족될 때 불러오도록 작성.
+- 외부 데이터를 불러오기 때문에 useEffect 기본으로 사용.
+
+1. useEffect 사용
+
+```
+useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((json) => setData(json));
+  }, []); // [] 의존성 배열의 영역을 비워두면 한 번만 호출.
+```
+
+2. axios 액시오스 사용
+
+- ① 터미널에 npm i axios 데이터 설치
+
+```
+npm i axios
+```
+
+- ② useEffect를 이용하여 axios 작성
+
+```
+  useEffect(() => {
+    axios.get(url).then((res) => setData(res));
+  }, []);
+```
+
+3. Async 사용
+
+```
+useEffect(() => {
+    const getData = async () => {
+      const res = await fetch(URL);
+      const data = await res.json();
+      setData(data);
+    };
+    getData();
+  });
+```
+
+4. Async + axios 사용 : 가장 코드가 간결해서 많이 사용.
+
+```
+useEffect(() => {
+    const getData = async () => {
+      const res = await axios.get(URL);
+      setData(res.data);
+    };
+    getData(data);
+  }, []);
+
+```
+
+- axios에서 try{}catch(err){} 를 이용하여 오류 확인.
+
 ## 231122
 
 #### ex: Friend List 만들기
@@ -53,6 +136,7 @@ useEffect(함수, []);
   - 함수를 memoization 함. 즉, 이전에 계산된 값을 저장했다가 동일한 상황이 다시 발생하면 다시 계산하지 않고 저장된 값을 반환.
   - 있던 값을 다시 반환하여 사용.
   - 주로 하위 컴포넌트에 콜백 함수를 전달 할 때 사용.
+- (가시적으로 보이지 않지만)시스템적으로 훨씬 원활하고 빠르게 돌아가도록 해줌.
 
 ## 231121
 
@@ -64,6 +148,7 @@ useEffect(함수, []);
   - ref는 컴포넌트 안에서만 동작
   - input의 focus나 scroll 이벤트, 애니메이션 사용 시.
 - 고유한 값이 필요할 때 사용.
+- useRef를 사용할 때는 current를 함께 사용.
 
 ```react
 /*
@@ -73,6 +158,13 @@ const a = useRef();
 사용
 a.current.id = "userID";
 */
+```
+
+- current Ex)
+
+```
+const focusRef = useRef();
+focusRef.current.focus();
 ```
 
 - [Ref와DOM](https://ko.legacy.reactjs.org/docs/refs-and-the-dom.html#gatsby-focus-wrapper)
@@ -88,15 +180,24 @@ a.current.id = "userID";
 6. react로 돌아가 npm run build, deploy
 7. github settings에서 pages gh-page로 변경
 
-```
-1)gh-pages 패키지 설치
-npm i gh-pages
+---
 
-2)설치 후 package.json 파일 수정
+1. gh-pages 패키지 설치
+
+```
+npm i gh-pages
+```
+
+2. 설치 후 package.json 파일 수정
+
+```
 "homepage": "https://xxxx.github.io/portfolio",  // 깃헙 페이지 주소 추가
 "deploy": "gh-pages -d build" // deploy 명령어 추가
+```
 
-3)deploy
+3. deploy
+
+```
 npm run build // build 폴더로 빌드
 npm run deploy // 현재 로컬 build폴더를 gh-pages 브랜치로 업로드
 ```
