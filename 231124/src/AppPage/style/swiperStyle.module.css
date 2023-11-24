@@ -1,0 +1,27 @@
+/* swiperStyle.module.css */
+
+.swiperWrap {
+  border-radius: 50px;
+  overflow: hidden;
+  --swiper-theme-color: #fff;
+  --swiper-navigation-size: 40px;
+  height: 600px;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50%;
+  background-color: #fff !important;
+}
+.swiperWrap img {
+  width: 100%;
+  height: 600px;
+}
+.txtP {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px auto;
+  width: 80%;
+}

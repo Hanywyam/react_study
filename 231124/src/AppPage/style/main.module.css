@@ -1,0 +1,68 @@
+/* main.module.css */
+/* font-family: 'Heebo', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+body,
+a,
+ul,
+li * {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  width: 100vw;
+  height: 120px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-bottom: 2px solid rgb(255, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 111;
+}
+
+h1 {
+  background-color: #ddd;
+  margin: 0;
+  width: 100px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+}
+
+main {
+  box-sizing: border-box;
+  margin: 0 6vw;
+}
+
+.txtBox h2 {
+  width: 80vw;
+  line-height: 1;
+  font-weight: bold;
+  font-size: 10rem;
+  margin: 200px 4vw 0;
+}
+
+.txtBox p {
+  font-size: 2rem;
+  margin: 40px 4vw 150px;
+}
+
+footer {
+  width: 80%;
+  margin: 100px auto;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #888;
+}

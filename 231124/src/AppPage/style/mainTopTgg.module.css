@@ -1,0 +1,15 @@
+/* mainTopTgg.module.css */
+
+.topTgg {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5vw;
+  right: 3vw;
+  z-index: 11;
+  transition: 0.5s;
+}
+.show {
+  transition: 0.5s;
+  opacity: 1;
+  visibility: visible;
+}

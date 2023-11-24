@@ -1,0 +1,30 @@
+/* MainImg.module.css */
+
+/* MainImg.css 
+==================================== */
+
+.imgBox {
+  width: 90%;
+  height: 500px;
+  margin: 200px 0;
+  padding: 30px;
+  background: linear-gradient(rgb(255, 217, 0), orange);
+  border-radius: 50px;
+  position: relative;
+}
+.imgBox img {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  /* transform: translate(-50%, -50%); */
+  width: 80%;
+  transition: 0.8s;
+}
+
+.txtBox {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px auto 200px;
+  width: 80%;
+}
