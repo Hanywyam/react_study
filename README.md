@@ -5,7 +5,7 @@
 #### react router DOM : 리액트 라우터
 
 - [feature overview](https://reactrouter.com/en/main/start/overview)
-- 리액트의 주기능은 아님. 따로 개발하여 운영하는 단체임.
+- 리액트의 주기능은 아님. 따로 개발하여 운영하는 단체.
 - 리액트에서 다양한 페이지 간의 이동 및 네비게이션을 관리하고 구현하는 데 사용
 - 설치 후 사용.
 
@@ -64,7 +64,53 @@ function App() {
 <Link to="about">소개</Link>
 ```
 
-- **하위 컴포넌트 연결 시**
+- **useParams** : 변수. 하위 컴포넌트 연결 시 사용.
+- id나 이름을 사용해서 하위컴포넌트를 불러옴.
+
+```
+const { 사용자정의변수 }  = useParams();
+const { userId } = useParams();
+```
+
+```
+        {/* useParams를 이용해 name값을 가져옴 */}
+        <Route path="/Products/:name" element={<Products />} />
+        <Route path="/Products/:userId(변수명)" element={<Products />} />
+```
+
+- const {사용자정의 라우트 변수} = useParams();
+- 이거하나면 data를 이용해 100개의 페이지도 만들 수 있음...
+
+```
+const Products = ({ data }) => {
+const { name } = useParams();
+
+  return (
+// 데이터 값 불러와 맞는 링크랑 페이지 연결
+      {data
+        .filter((itm) => itm.title === name)
+        .map((itm) => (
+          <div key={itm.id}>
+            <h3>{itm.title}</h3>
+            <p>{itm.info}</p>
+          </div>
+        ))}
+    </div>
+  );
+};
+```
+
+- 유니버셜 마크 `/*`
+  - `"/*"` == 모든 경로,
+  - `"/menu/*"` == 메뉴 뒤에 오는 모든 경로
+    <br> -> 주로 서브 라우터 구성 시, 주로 사용.
+
+- Query
+  - 변수값을 통해 페이지 내용 변화를 줌.
+
+#### useParams
+
+## 231128
 
 #### pixabay로 검색 갤러리 만들기
 
@@ -73,11 +119,13 @@ function App() {
 #### ex: Index 만들기 (scroll event, menu-bar)
 
 ```
+
 Main
 ├─ MenuNav
 ├─ MainImg
 ├─ MainSwiper
 └─ MainTop
+
 ```
 
 ## 231123
@@ -87,7 +135,9 @@ Main
 1. 터미널에서 설치
 
 ```
-  npm i swiper
+
+npm i swiper
+
 ```
 
 2. swiper 사이트에서 react 들어가서 참고해서 적용.
@@ -100,20 +150,24 @@ Main
 - 돔을 제어할 때는 객체명을 꼭 작성해야함.
 
 ```
-  window.addEventListener("resize", () => {
-    setWidth(window.innerWidth);
-  });
+
+window.addEventListener("resize", () => {
+setWidth(window.innerWidth);
+});
+
 ```
 
 - 이렇게 그냥 쓰면 시스템 과부화가 생김.
 - 그래서 useEffect를 사용해줘야함.
 
 ```
-  useEffect(() => {
-  window.addEventListener("resize", () => {
-      setWidth(window.innerWidth);
-    });
-  },[]);
+
+useEffect(() => {
+window.addEventListener("resize", () => {
+setWidth(window.innerWidth);
+});
+},[]);
+
 ```
 
 #### API: Async await axios
@@ -125,11 +179,13 @@ Main
 1. useEffect 사용
 
 ```
+
 useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => setData(json));
-  }, []); // [] 의존성 배열의 영역을 비워두면 한 번만 호출.
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then((response) => response.json())
+.then((json) => setData(json));
+}, []); // [] 의존성 배열의 영역을 비워두면 한 번만 호출.
+
 ```
 
 2. axios 액시오스 사용
@@ -137,40 +193,47 @@ useEffect(() => {
 - ① 터미널에 npm i axios 데이터 설치
 
 ```
+
 npm i axios
+
 ```
 
 - ② useEffect를 이용하여 axios 작성
 
 ```
-  useEffect(() => {
-    axios.get(url).then((res) => setData(res));
-  }, []);
+
+useEffect(() => {
+axios.get(url).then((res) => setData(res));
+}, []);
+
 ```
 
 3. Async 사용
 
 ```
+
 useEffect(() => {
-    const getData = async () => {
-      const res = await fetch(URL);
-      const data = await res.json();
-      setData(data);
-    };
-    getData();
-  });
+const getData = async () => {
+const res = await fetch(URL);
+const data = await res.json();
+setData(data);
+};
+getData();
+});
+
 ```
 
 4. Async + axios 사용 : 가장 코드가 간결해서 많이 사용.
 
 ```
+
 useEffect(() => {
-    const getData = async () => {
-      const res = await axios.get(URL);
-      setData(res.data);
-    };
-    getData(data);
-  }, []);
+const getData = async () => {
+const res = await axios.get(URL);
+setData(res.data);
+};
+getData(data);
+}, []);
 
 ```
 
@@ -181,11 +244,13 @@ useEffect(() => {
 #### ex: Friend List 만들기
 
 ```
+
 Friends
 ├─ FriendLists
-│  ├─ FriendItem
-│  └─ FriendLiBtn
+│ ├─ FriendItem
+│ └─ FriendLiBtn
 └─ FriendInfo
+
 ```
 
 #### useEffect
@@ -199,11 +264,14 @@ Friends
 - 외부 API를 불러올 때 주로 사용.
 
 ```
+
 useEffect(함수, []);
+
   <!--
   주로 side effect 를 수행.
   비동기 통신 요청 및 응답, DOM 조작, props를 받아서 갱신할 때, 외부 라이브러리 등을 사용할 때 적용.
   -->
+
 ```
 
 - useEffect(()=>{실행문}); 렌더링 될 때마다 실행. 일반적으로는 사용 X
@@ -216,11 +284,13 @@ useEffect(함수, []);
 - return: Mount가 한 번만 실행 후 정리. 메모리 누수가 발생하지 않도록 정리가 필요하기 때문.
 
 ```
-  useEffect(()=> {
-    실행문
-    return ()=> {clean-up 함수
-  };
-  },[state]);
+
+useEffect(()=> {
+실행문
+return ()=> {clean-up 함수
+};
+},[state]);
+
 ```
 
 #### useCallback
