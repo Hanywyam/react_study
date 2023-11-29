@@ -1,0 +1,106 @@
+.preload1 {
+  position: relative;
+  margin-bottom: 40px;
+}
+.preload1 span {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: 9px;
+  height: 5px;
+  background: coral;
+  animation: preload 1.5s infinite ease-in-out;
+}
+.preload1 span:nth-child(2) {
+  left: 11px;
+  animation-delay: 0.2s;
+}
+.preload1 span:nth-child(3) {
+  left: 22px;
+  animation-delay: 0.4s;
+}
+.preload1 span:nth-child(4) {
+  left: 33px;
+  animation-delay: 0.6s;
+}
+.preload1 span:nth-child(5) {
+  left: 44px;
+  animation-delay: 0.8s;
+}
+
+@keyframes preload {
+  0% {
+    height: 5px;
+    transform: translateY(0px);
+    background: coral;
+  }
+  25% {
+    height: 30px;
+    transform: translateY(15px);
+    background: cornflowerblue;
+  }
+  50% {
+    height: 5px;
+    transform: translateY(0px);
+    background: cornflowerblue;
+  }
+  100% {
+    height: 5px;
+    transform: translateY(0px);
+    background: coral;
+  }
+}
+
+.loaderTitle {
+  font-size: 3rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  overflow: hidden;
+  animation: text 0.8s 1 ease-in-out forwards;
+}
+@keyframes text {
+  0% {
+    /* height: 20vh; */
+  }
+  100% {
+    height: 0;
+  }
+}
+
+.preload:nth-child(2) {
+  width: 100%;
+  height: 0;
+  background-color: orange;
+  position: fixed;
+  top: 0;
+  animation: slideUp 0.8s 0.3s 1 ease-in-out;
+}
+.preload:nth-child(3) {
+  width: 100%;
+  height: 0;
+  background-color: orangered;
+  position: fixed;
+  top: 0;
+  animation: slideUp 0.8s 1 ease-in-out;
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    height: 100vh;
+  }
+  30% {
+    height: 10vh;
+  }
+  70% {
+    height: 100vh;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+  }
+}

@@ -1,5 +1,73 @@
 # react_study
 
+## 231129
+
+#### react router DOM : 리액트 라우터
+
+- [feature overview](https://reactrouter.com/en/main/start/overview)
+- 리액트의 주기능은 아님. 따로 개발하여 운영하는 단체임.
+- 리액트에서 다양한 페이지 간의 이동 및 네비게이션을 관리하고 구현하는 데 사용
+- 설치 후 사용.
+
+```react
+npm i react-router-dom
+```
+
+- 사용 시, import 해야 사용 가능.
+
+```
+import {  BrowserRouter ,  Routes,  Route,  Link  } from "react-router-dom";
+<Route path="경로" element={ <보여주고싶은 컴포넌트 /> }>
+```
+
+- BrowserRouter : HTML5의 History API를 사용
+
+```react
+import { BrowserRouter } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+       <App />
+    </BrowserRouter>
+  );
+}
+```
+
+- Route : 특정 경로에 대한 컴포넌트 연결
+
+```react
+<Routes>
+<!-- path="/" 첫페이지 설정 -->
+<Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+</Routes>
+```
+
+```
+<!-- 작성 값 -->
+<Route path="/경로명" element={<컴포넌트명 />} />
+```
+
+```
+<!-- 잘못된 페이지 연결 시, 보여지는 경로 연결
+    -> 항상 설정의 마지막에 작성한다. -->
+<Route path="*" element={<NotFoundPage />} />
+```
+
+- Link to : Router 주소 변경 컴포넌트
+- 브라우저에서 렌더링 된 결과는 `<a href="">`로 표시된다.
+
+```
+<Link to="/path주소(경로명)">표시되는 내용</Link>
+<Link to="/">홈</Link>
+<Link to="about">소개</Link>
+```
+
+- **하위 컴포넌트 연결 시**
+
+#### pixabay로 검색 갤러리 만들기
+
 ## 231124
 
 #### ex: Index 만들기 (scroll event, menu-bar)
