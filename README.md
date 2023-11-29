@@ -64,7 +64,8 @@ function App() {
 <Link to="about">소개</Link>
 ```
 
-- **useParams** : 변수. 하위 컴포넌트 연결 시 사용.
+- **useParams** [useParams](https://reactrouter.com/en/main/hooks/use-params)
+- 변수. 하위 컴포넌트 연결 시 사용.
 - id나 이름을 사용해서 하위컴포넌트를 불러옴.
 
 ```
@@ -101,18 +102,43 @@ const { name } = useParams();
 ```
 
 - 유니버셜 마크 `/*`
+
   - `"/*"` == 모든 경로,
   - `"/menu/*"` == 메뉴 뒤에 오는 모든 경로
     <br> -> 주로 서브 라우터 구성 시, 주로 사용.
 
 - Query
+
+  - `?`뒤에 들어가는 내용이 쿼리.
+    - 쿼리 변수
+    - &query=text
+    - &image=photo
+    - &lang=ko
   - 변수값을 통해 페이지 내용 변화를 줌.
 
-#### useParams
+- **useLocation** [useLocation](https://reactrouter.com/en/main/hooks/use-location)
+
+  - 정보의 값을 확인할 수 있음.
+
+- **useNavigate** [useNavigate](https://reactrouter.com/en/main/hooks/use-navigate)
+  - `<Link to>`와 같은 역할을 하거나 뒤로가기
+  - 주로 뒤로가기를 쓰기 위해 사용한다.
+  - 작업 시, History 컴퍼넌트를 따로 만들어 연결만으로 편하게 사용이 가능.
+
+```
+const navigate = useNavigate();
+navigate('/about'); // about으로 이동
+navigate('/');// 루트(홈)로 이동
+navigate(-1);// 이전으로 이동
+navigate(-3);// 3단계 이전으로 이동
+```
 
 ## 231128
 
 #### pixabay로 검색 갤러리 만들기
+
+- [react-masonry-css](https://github.com/paulcollett/react-masonry-css)
+- [styled-reset](https://www.npmjs.com/package/styled-reset)
 
 ## 231124
 
