@@ -1,5 +1,30 @@
 # react_study
 
+## 231130
+
+#### ex:newsAPI 만들기
+
+- [NewsAPI](https://newsapi.org/s/south-korea-news-api)
+
+#### ex:kakaoAPI 만들기
+
+- [REST API:book](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book)
+
+#### react router DOM : 리액트 라우터
+
+- [NavLink](https://reactrouter.com/en/main/components/nav-link)
+
+```react
+  <Link to="">
+  : 단순 이동하고자 할 때. === <a href="">
+  ㄴ to="경로"
+
+  <NavLink to="">
+  : active 클래스 값이 기본으로 탑재(반환값 true:false)
+    ㄴ to="경로"
+    ㄴ end="경로" 경로가 정확하게 일치할 때 active 적용 가능
+```
+
 ## 231129
 
 #### react router DOM : 리액트 라우터
