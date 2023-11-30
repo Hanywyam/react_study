@@ -1,19 +1,20 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import KakaoPage from "./KakaoPage";
+import Categories from "./Categories";
+import BookList from "./BookList";
 
-const KakaoAPI = () => {
-  const [category, setCategory] = useState("");
-
+const kakaoAPI = () => {
   return (
     <div>
-      <h2>kakao API</h2>
-
+      <h1>kakao book API</h1>
+      <Categories />
+      <hr />
       <Routes>
-        <Route path="/:category?" element={<KakaoPage />} />
+        <Route path="/" element={<h2>첫페이지</h2>} />
+        <Route path="/book" element={<BookList />} />
+        <Route path="/book/:title" element={<BookList />} />
       </Routes>
     </div>
   );
 };
 
-export default KakaoAPI;
+export default kakaoAPI;
