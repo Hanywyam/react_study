@@ -1,5 +1,9 @@
 # react_study
 
+## 321201
+
+#### ex: Nike mini homepage 만들기
+
 ## 231130
 
 #### ex:newsAPI 만들기
@@ -9,6 +13,16 @@
 #### ex:kakaoAPI 만들기
 
 - [REST API:book](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book)
+
+#### qs : 쿼리 문자열을 다루기 쉽게 해주는 라이브러리
+
+- 쿼리 문자열을 파싱하는 라이브러리
+- [npmjs:qs](https://www.npmjs.com/package/qs)
+
+```
+// 터미널에 라이브러리 설치
+npm i qs
+```
 
 #### react router DOM : 리액트 라우터
 
