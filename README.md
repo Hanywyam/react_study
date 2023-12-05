@@ -1,5 +1,60 @@
 # react_study
 
+## 321204-5
+
+#### Context 상태관리
+
+- [Context-react](https://ko.legacy.reactjs.org/docs/context.html)
+- context를 이용하면 단계마다 일일이 props를 넘겨주지 않고도 컴포넌트 트리 전체에 데이터를 제공할 수 있다.
+
+- ​**Context API**
+
+  - React 컴포넌트 트리 안에서 전역(global) 상태 관리
+  - 컴포넌트 트리 전체에 데이터를 제공할 수 있음
+  - 하지만, 컴포넌트를 재사용하기가 어려워 지기 때문에 꼭 필요할 때만 사용
+
+- **React.createContext**
+  : Context 객체 생성(저장공간)<br>
+  - 컨텍스트는 따로 파일을 만들어 관리한다.
+
+```
+const MyContext = React.createContext(초기값);
+```
+
+- 동적 Context : state, actions 객체를 가짐.
+  `const ColorContext = createContext({state:값, actions:값});`<br>
+- state: 전역에서 사용되는 상태 값.
+- actions: 상태를 변경하는 함수.
+  : () => {}; 초기값. 초기 세팅 후, 실제 함수를 쓰면 대체가 됨.<br>
+- Provider로 감싸지 않고 사용할 경우 기본값은 null로 초기화.
+
+- **Context.Provider**
+  : 하위 컴포넌트에게 값을 제공하는 역할<br>
+
+```
+<MyContext.Provider value={value}>
+  <Components />
+</MyContext.Provider>
+```
+
+- **Context.Consumer**
+  : Context 값을 읽는 역할<br>
+
+```
+<MyContext.Consumer>
+  {value => value 사용 코드}
+</MyContext.Consumer>
+```
+
+- **useContext()**
+  : Context 값을 hook<br>
+
+```
+const value = useContext(MyContext);
+
+return <p>{value}</p>;
+```
+
 ## 321201
 
 #### 팀프로젝트 시작
