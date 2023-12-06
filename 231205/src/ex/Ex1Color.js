@@ -1,15 +1,12 @@
-import { useState } from "react";
 import Color from "./Color";
-import { ColorData } from "./state/ColorContext";
+import ColorProvider from "./state/ColorContext";
 
 const Ex1Color = () => {
-  const [color, setColor] = useState(false);
-
   return (
     <>
-      <ColorData.Provider value={{ color, setColor }}>
+      <ColorProvider>
         <Color />
-      </ColorData.Provider>
+      </ColorProvider>
     </>
   );
 };

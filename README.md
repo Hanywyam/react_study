@@ -1,6 +1,50 @@
 # react_study
 
-## 321204-5
+- Redux
+- local Registry
+
+## 231206
+
+#### useReducer 상태 관리
+
+- useReducer 장점: 상태 변화를 예측하기 쉽게 만들어주며, 상태 변화를 처리하는 로직을 한 곳에 모아 관리할 수 있게 함
+
+  `const [state, dispatch] = useReducer(reducer, initialState);`
+
+  - state: 현재 상태 값
+  - dispatch: 액션을 발생시키는 함수
+  - 디스패치 함수를 호출하면 리듀서 함수가 새로운 상태를 컴포넌트의 상태로 설정
+  - reducer: 현재 상태와 액션을 인자로 받아, 새로운 상태를 반환하는 함수
+  - initialState: 초기 상태 값
+
+- switch문을 이용하여 작성.
+
+```
+const action = {
+  type: 'INCREMENT', // 작업 종류를 나타내는 문자열
+  payload: ,
+};
+```
+
+- action :
+  - 상태 변경을 정의하는 객체. 리듀서 함수는 이 action의 타입을 기준으로 상태 변경 결정.
+  - type 속성을 가진 객체로 구성되어야 하며 문자열
+  - 보통 관습적으로 대문자로 작성
+- payload :
+  - 선택 속성
+  - action이 상태를 어떻게 변경할지를 정의하는 추가 데이터
+
+#### useState VS useReducer
+
+- **useState**
+  - 상태를 관리하는 가장 기본적인 방법
+  - 단일 상태 값을 관리하고, 상태를 업데이트하는 함수 반환
+  - 상태 값이 단순하거나 복잡한 로직이 필요하지 않은 경우에 적합
+- **useReducer**
+  - 상태 값이 복잡하거나 여러 하위 값을 가지고 있는 경우에 사용
+  - 리듀서 함수와 초기 상태를 인자로 받아, 현재 상태와 디스패치 함수를 반환
+
+## 231204-5
 
 #### Context 상태관리
 
