@@ -1,0 +1,30 @@
+// colorStore.js
+// redux 특징
+// 1. action 생성 const 액션명 = "파일명(구분값)/액션명";
+const ORANGE = "color/ORANGE";
+const TEAL = "color/TEAL";
+const SALMON = "color/SALMON";
+
+// 2. action 내보내기 dispatch(()=>{ type: AAA })
+export const orange = () => ({ type: ORANGE });
+export const teal = () => ({ type: TEAL });
+export const salmon = () => ({ type: SALMON });
+
+// 3. 초기값 설정
+const initialState = { backgroundColor: "#222" };
+
+// 4. 리듀서 설정
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ORANGE:
+      return { backgroundColor: "orange" };
+    case TEAL:
+      return { ...state, backgroundColor: "teal" };
+    case SALMON:
+      return { backgroundColor: "salmon" };
+    default:
+      return state;
+  }
+};
+
+export default reducer;

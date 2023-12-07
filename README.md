@@ -1,7 +1,47 @@
 # react_study
 
-- Redux
 - local Registry
+
+## 231207
+
+#### Redux
+
+- Redux는 상태관리 라이브러리
+- [Redux](https://ko.redux.js.org/)
+- 리액트 내장 프로그램?이 아니기때문에 install해서 사용.
+  `npm i redux react-redux`
+- React, Angular, Vue, Ember, jQuery 또는 Vanilla JavaScript와 같은 다른 라이브러리, 프레임워크에서도 사용할 수 있다.
+- redux store는 app.js 또는 index.js와 같은 위치에 두고 사용.
+- 타입스크립트 사용 시, ~~createStore~~에 생기는 취소선은 사용에 큰 문제는 없음.
+
+- **Store** : ​전역으로 관리할 데이터를 저장하는 공간
+- **Reducer** : 함수로 store에 저장했거나 저장할 데이터를 새로운 상태를 반환하는 함수
+- **Action** : 특정 컴포넌트에서 reducer에 변경할 데이터를 전달하기 위한 객체. 이벤트
+- state는 불변(읽기 전용) 데이터이며 action만이 상태 교체를 요청 할 수 있음
+- reducer를 통해 상태의 최종 값만 설정
+- 무엇이 일어나는지는 dispatch를 이용해서 알리며 어떻게 바꿀지는 reducer를 이용해서 state를 조작
+
+- 단점 )
+
+  - 각 컴포넌트에서 수정할 데이터가 api 비동기 데이터일 경우에는 axios함수 관리가 어려워짐
+  - redux에서 API 비동기 데이터를 사용하기가 매우 까다로워서 redux toolkit을 이용.
+
+- **redux 작업순서**
+
+1. 컴포넌트에서 axios데이터 요청
+2. 반환값을 action 생성 함수를 통해 dispatch로 reducer에 전달
+3. 전역 공간에 초기 데이터를 전달해주거나 기존 데이터를 변경해주는 Reducer생성
+4. reducer에서 만들어진 데이터를 store에 저장
+5. index.js에서 store객체를 최상위 컴포넌트인 App에 전달
+6. 각 컴포넌트에서 useSelector를 통해 store의 데이터를 전달 받아 출력
+7. 자식 컴포넌트에서 store 전역 데이터 변경을 위해 다시 변경할 데이터를 action객체로 만들어 dispatch에 전달
+
+#### uuid
+
+- [uuid](https://www.npmjs.com/package/uuid)
+- Node에서 사용하는 uuid 인스톨
+- 랜덤의 숫자를 무한으로 만들어줌?
+  `npm i uuid`
 
 ## 231206
 
