@@ -1,8 +1,13 @@
 # react_study
 
+- redux toolkit
 - local Registry
 
-## 231207
+- Node
+  - 몽고디비
+  - SQL NoSQL
+
+## 231207-8
 
 #### Redux
 
