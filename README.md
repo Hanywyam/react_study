@@ -1,11 +1,17 @@
 # react_study
 
-- redux toolkit
 - local Registry
 
 - Node
   - 몽고디비
   - SQL NoSQL
+
+## 231211
+
+- redux toolkit
+- [redux toolkit](https://ko.redux.js.org/redux-toolkit/overview/)
+- redux는 외부 API를 가져오기 힘들다 => toolkit을 사용하면 가능.
+- toolkit 에서는 modules을 slices로 많이 사용함.
 
 ## 231207-8
 
