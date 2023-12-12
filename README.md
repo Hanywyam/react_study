@@ -1,17 +1,56 @@
 # react_study
 
-- local Registry
-
 - Node
   - 몽고디비
   - SQL NoSQL
 
-## 231211
+## 231213
 
-- redux toolkit
+#### local Registry
+
+- [localStorage](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)
+- [bootstrap](https://getbootstrap.com/)
+
+## 231211-2
+
+#### **redux toolkit**
+
 - [redux toolkit](https://ko.redux.js.org/redux-toolkit/overview/)
+- install 후 사용 `npm i @reduxjs/toolkit`
 - redux는 외부 API를 가져오기 힘들다 => toolkit을 사용하면 가능.
 - toolkit 에서는 modules을 slices로 많이 사용함.
+- reducer 작성이 redux보다 간결함.
+
+#### **redux toolkit API**
+
+- [createAsyncThunk](https://redux-toolkit.js.org/api/createAsyncThunk)
+
+```
+  // First, create the thunk
+  const fetchUserById = createAsyncThunk("users/fetchByIdStatus", async () => {});
+
+  // Then, handle actions in your reducers:
+  export const pixabaySlice = createSlice({
+  name: "구분 이름",
+  initialState,
+  reducer: {}
+  extraReducers: (builder) => {
+    builder.addCase(pending).addCase(fulfilled).addCase(rejected)
+    }
+  })
+```
+
+- Promise의 상태 3가지
+  - pending :대기 중
+  - 'users/requestStatus/pending'
+  - fulfilled : 불러왔을 때
+  - 'users/requestStatus/fulfilled'
+  - rejected :오류
+  - 'users/requestStatus/rejected'
+
+#### pixabay API 연결하기
+
+#### pixabay API 연결해서 swiper 돌리기
 
 ## 231207-8
 
