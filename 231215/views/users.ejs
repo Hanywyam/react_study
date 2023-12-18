@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>users</title>
+  <link rel="stylesheet" href="/users.css">
+</head>
+
+<body>
+  <h2>
+    <%= id %> 프로필 :
+  </h2>
+  <ul>
+    <li>이름 : <%= name %>
+    </li>
+    <li>이메일 : <%= email %>
+    </li>
+    <li>연락처 : <%= phone %>
+    </li>
+    <li>주소 : <%= address.city %>
+    </li>
+    <li>웹사이트 : <a href="https://<%= website %>" target="_blank">
+        <%= website %>
+      </a>
+    </li>
+    <li>회사명 : <%= company.name %>
+    </li>
+  </ul>
+
+</body>
+
+</html>

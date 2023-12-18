@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>page1</title>
+</head>
+
+<body>
+  <h2>page1 - ejs</h2>
+  <h3>랜덤의 수는? <%= num %>
+  </h3>
+  <% if(num % 2===0) { %>
+    <h4>짝수</h4>
+    <% } else { %>
+      <h4>홀수</h4>
+      <% } %>
+
+        <hr>
+        <%= num % 2===0 ? "짝수" : "홀수" %>
+</body>
+
+</html>

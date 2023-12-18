@@ -1,8 +1,36 @@
 # react_study
 
+## 231218
+
 - Node
-  - 몽고디비
   - SQL NoSQL
+
+#### 몽고디비 : MongoDB
+
+- [mongoDB:atlas 사용법](https://www.mongodb.com/docs/atlas/getting-started/):atlasUI 확인
+- [code](https://www.mongodb.com/docs/atlas/tutorial/insert-data-into-your-cluster/)
+- Document 지향 데이터 모델을 사용하는 데이터베이스.
+- XML, JSON 형태의 데이터를 저장하는 것을 말하며 MongoDB는 { key: value } 오브젝트 형식인 JSON형태로 데이터 저장.
+- 데이터베이스 > 컬렉션 > 도큐먼트 순 크기
+
+- [mongoose](https://mongoosejs.com/)
+  `npm i mongoose`
+
+## 231214-5
+
+#### 템플릿 엔진 ejs
+
+- [ejs](https://ejs.co/)
+- 템플릿 엔진이란?
+  - 서버 측 데이터를 클라이언트 측 HTML로 렌더링하는 데 사용되는 도구 또는 소프트웨어
+  - 동적인 데이터를 출력하기 위해 사용
+  - EJS (Embedded JavaScript) : JavaScript 코드를 HTML에 포함하여 사용하는 템플릿 엔진. Node.js에서 자주 사용.
+    `npm i ejs`
+  - 주요 문법
+    - 제어문 :
+    - 변수 출력 :
+    - 예약어 표시 :
+    - 다른 파일 포함 :
 
 ## 231213
 

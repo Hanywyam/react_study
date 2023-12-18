@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>coffee</title>
+</head>
+
+<body>
+  <h2>커피 종류</h2>
+  <p>
+    <%= coffee %>
+  </p>
+  <h3>.map()</h3>
+  <ul>
+    <% coffee.map(item=> { %>
+      <li>
+        <%= item %>
+      </li>
+      <% }); %>
+  </ul>
+
+  <h3>.forEach()</h3>
+  <ul>
+    <% coffee.forEach(item=> { %>
+      <li>
+        <%= item %>
+      </li>
+      <% }); %>
+  </ul>
+</body>
+
+</html>
