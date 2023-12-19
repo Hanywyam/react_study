@@ -1,6 +1,6 @@
 # react_study
 
-## 231218
+## 231218-20
 
 - Node
   - SQL NoSQL
@@ -14,9 +14,24 @@
 - 데이터베이스 > 컬렉션 > 도큐먼트 순 크기
 
 - [mongoose](https://mongoosejs.com/)
-  `npm i mongoose`
+  `$ npm i mongoose`
+
+  - 컬렉션? 정리하여 사용하기 편함
+
+- 패스워드 암호화
+- [sha256](https://www.npmjs.com/package/sha256)
+  `$ npm i sha256`
+  `$ npm i cors`
+
+- express-session
+- [express-session](https://expressjs.com/en/resources/middleware/session.html)
+- [express-session:npm](https://www.npmjs.com/package/express-session)
+  `$ npm install express-session`
+- 세션을 쉽게 다룰 수 있게 도와줌.
 
 ## 231214-5
+
+- [react-bootstrap](https://react-bootstrap.netlify.app/)
 
 #### 템플릿 엔진 ejs
 
