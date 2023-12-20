@@ -4,6 +4,11 @@
 
 - Node
   - SQL NoSQL
+  - express framework
+  - MVC
+    - modeling
+    - view
+    - c..?
 
 #### 몽고디비 : MongoDB
 
@@ -16,13 +21,12 @@
 - [mongoose](https://mongoosejs.com/)
   `$ npm i mongoose`
 
-  - 컬렉션? 정리하여 사용하기 편함
+  - 스키마를 이용하여 컬렉션으로 정리해서 사용하기 편함
 
 - 패스워드 암호화
 - [sha256](https://www.npmjs.com/package/sha256)
   `$ npm i sha256`
   `$ npm i cors`
-
 - express-session
 - [express-session](https://expressjs.com/en/resources/middleware/session.html)
 - [express-session:npm](https://www.npmjs.com/package/express-session)

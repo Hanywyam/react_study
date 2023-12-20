@@ -44,7 +44,7 @@ const postSchema = new mongoose.Schema({
   wdate: { type: Date, default: Date.now },
 });
 
-const Post = mongoose.madel("Post", postSchema);
+const Post = mongoose.model("Post", postSchema);
 
 // 회원가입
 /* 
@@ -124,7 +124,7 @@ app.get("/logout", (req, res) => {
 // posts
 app.get("/posts", async (req, res) => {
   try {
-    const page = Numnber(req.query.page) || 1;
+    const page = Number(req.query.page) || 1;
     const perPage = 10;
     const skip = (page - 1) * perPage;
 
@@ -133,14 +133,81 @@ app.get("/posts", async (req, res) => {
     // .skip() 건너 뛸 검색 수. 매개변수 없으면 건너띄지 않음.
     // .limit() 반환 문서 최대 값.
     // .lean() mongoose 사용 시 작성. mongoose 문서 -> js 객체 변환.
-    const posts = await Post.find().sort().skip(skip).limit(perPage).lean();
-    const totalPosts = await Post.countDocuments(); // mongoose 자동반환
+    const posts = await Post.find()
+      .sort({ wdate: -1 })
+      .skip(skip)
+      .limit(perPage)
+      .lean();
+    const totalPosts = await Post.countDocuments();
     const totalPages = Math.ceil(totalPosts / perPage);
 
     res.json({ docs: posts, totalPages });
-  } catch (err) {
-    console.log("posts err:", err);
+  } catch (error) {
+    console.log("posts err: ", error);
     res.status(500).send("posts 서버 오류");
+  }
+});
+
+app.get("/posts/total", async (req, res) => {
+  try {
+    const totalPosts = await Post.countDocuments();
+    res.json({ total: totalPosts });
+  } catch (err) {
+    console.log("오류: ", err);
+    res.status(500).send("서버 오류");
+  }
+});
+
+// 게시글 작성
+app.post("/posts/write", async (req, res) => {
+  const { title, content, writer, wdate } = req.body;
+  try {
+    const newPost = new Post({ title, content, writer, wdate });
+    await newPost.save();
+    res.sendStatus(200);
+  } catch (err) {
+    console.log("작성 오류: ", err);
+    res.status(500).send("서버 작성 오류");
+  }
+});
+
+// 게시글 읽기
+app.get("/posts/read/:id", async (req, res) => {
+  const postId = req.params.id;
+  console.log(postId);
+  try {
+    const post = await Post.findOne({ _id: postId }).lean();
+    if (!post) {
+      return res.status(404).json({ error: "내용을 찾을 수 없습니다." });
+    }
+    res.json(post);
+  } catch (err) {
+    console.log("읽기 오류: ", err);
+    res.status(500).send("서버 읽기 오류");
+  }
+});
+
+// 게시글 삭제
+app.post("/posts/delete/:id", async (req, res) => {
+  const postId = req.params.id;
+  try {
+    await Post.deleteOne({ _id: postId });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log("삭제 오류: ", err);
+    res.status(500).send("서버 삭제 오류");
+  }
+});
+
+// 게시글 수정
+app.post("/posts/update", async (req, res) => {
+  const { id, title, content, writer, wdate } = req.body;
+  try {
+    await Post.updateOne({ _id: id }, { title, content, writer, wdate });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log("수정 오류: ", err);
+    res.status(500).send("서버 수정 오류");
   }
 });
 
