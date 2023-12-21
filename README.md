@@ -1,14 +1,60 @@
 # react_study
 
+## 231221
+
+#### gitHub로 배포
+  - back 디렉토리 > index.js에 build 설정
+```
+const path = require("path");
+
+//mongoDB 연결
+(...)
+
+// build
+app.use(express.static(path.join(__dirname, "build")));
+```
+  - front 디렉토리 build `npm run build`
+  - build 디렉토리 -> back 디렉토리로 복붙
+  - `index.js` 에 환경변수 추가 `const path = require("path");`
+  - build 연결 `app.use(express.static(path.join(__dirname, "build")));`
+  - gitHub에 back 디렉토리(node 디렉토리, .env 파일 제외)를 새로운 레파짓 생성해서 업로드 
+  - [cloudtype](https://cloudtype.io/) 접속 -> gitHub로 시작 버튼 클릭
+    - 배포할 레파짓 선택 
+    - 언어/프레임 워크는 node.js 선택
+    - 프레임 워크 버전은 작업한 환경과 동일하게 맞춰야 함.
+    - Environment variables === .env 환경 변수 값을 동일하게 추가 작성.
+    - 포트 설정도 동일하게 맞춤.
+      - Port: 8080
+      - Install command: npm ci
+      - Start command: node index.js
+    - 배포하기 클릭
+    - 깃허브에 수정사항이 있을 때 > 설정 > 배포하기 만 하면 됨.
+  
+#### MVC 
+
+- models
+- views
+- controls
+
+#### .env 환경변수
+
+- 운영 체제가 프로그램을 실행하는 데 필요한 정보를 제공하는 데 사용되는 변수
+- Node.js
+  - process.env 객체를 통해 환경 변수에 접근
+- 노출되지 말아야하는 데이터를 환경 변수를 만들어서 설정함.
+- [npm:dotenv](https://www.npmjs.com/package/dotenv)<br>
+  `$ npm i dotenv`<br>
+  - 1)back 디렉토리에 `.env` 파일 생성
+  - 2)중요하게 생각하는 데이터(값)을 이 파일에 변수를 만들어 저장하고 관리
+  - 3)Node.js 애플리케이션에서 dotenv 적용(index.js 혹은 app.js)<br>
+    `require('dotenv').config();`<br>
+
+
 ## 231218-20
 
 - Node
   - SQL NoSQL
   - express framework
-  - MVC
-    - modeling
-    - view
-    - c..?
 
 #### 몽고디비 : MongoDB
 
@@ -19,18 +65,18 @@
 - 데이터베이스 > 컬렉션 > 도큐먼트 순 크기
 
 - [mongoose](https://mongoosejs.com/)
-  `$ npm i mongoose`
+  `$ npm i mongoose`<br>
 
   - 스키마를 이용하여 컬렉션으로 정리해서 사용하기 편함
 
 - 패스워드 암호화
 - [sha256](https://www.npmjs.com/package/sha256)
-  `$ npm i sha256`
-  `$ npm i cors`
+  `$ npm i sha256`<br>
+  `$ npm i cors`<br>
 - express-session
 - [express-session](https://expressjs.com/en/resources/middleware/session.html)
 - [express-session:npm](https://www.npmjs.com/package/express-session)
-  `$ npm install express-session`
+  `$ npm install express-session`<br>
 - 세션을 쉽게 다룰 수 있게 도와줌.
 
 ## 231214-5
@@ -44,7 +90,7 @@
   - 서버 측 데이터를 클라이언트 측 HTML로 렌더링하는 데 사용되는 도구 또는 소프트웨어
   - 동적인 데이터를 출력하기 위해 사용
   - EJS (Embedded JavaScript) : JavaScript 코드를 HTML에 포함하여 사용하는 템플릿 엔진. Node.js에서 자주 사용.
-    `npm i ejs`
+    `npm i ejs`<br>
   - 주요 문법
     - 제어문 :
     - 변수 출력 :
@@ -106,7 +152,7 @@
 - Redux는 상태관리 라이브러리
 - [Redux](https://ko.redux.js.org/)
 - 리액트 내장 프로그램?이 아니기때문에 install해서 사용.
-  `npm i redux react-redux`
+  `npm i redux react-redux`<br>
 - React, Angular, Vue, Ember, jQuery 또는 Vanilla JavaScript와 같은 다른 라이브러리, 프레임워크에서도 사용할 수 있다.
 - redux store는 app.js 또는 index.js와 같은 위치에 두고 사용.
 - 타입스크립트 사용 시, ~~createStore~~에 생기는 취소선은 사용에 큰 문제는 없음.
@@ -138,7 +184,7 @@
 - [uuid](https://www.npmjs.com/package/uuid)
 - Node에서 사용하는 uuid 인스톨
 - 랜덤의 숫자를 무한으로 만들어줌?
-  `npm i uuid`
+  `npm i uuid`<br>
 
 ## 231206
 
@@ -146,7 +192,7 @@
 
 - useReducer 장점: 상태 변화를 예측하기 쉽게 만들어주며, 상태 변화를 처리하는 로직을 한 곳에 모아 관리할 수 있게 함
 
-  `const [state, dispatch] = useReducer(reducer, initialState);`
+  `const [state, dispatch] = useReducer(reducer, initialState);`<br>
 
   - state: 현재 상태 값
   - dispatch: 액션을 발생시키는 함수
